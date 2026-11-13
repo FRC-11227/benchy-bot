@@ -25,7 +25,7 @@ public class ExampleSubsystem extends SubsystemBase {
     return runOnce(
         () -> {
           /* one-time action goes here */
-          m.motor.set(0.2);
+          m_motor.set(0.2);
         });
   }
 
