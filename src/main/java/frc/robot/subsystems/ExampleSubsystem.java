@@ -26,7 +26,7 @@ public class ExampleSubsystem extends SubsystemBase {
     // Subsystem::RunOnce implicitly requires `this` subsystem.
     return runOnce(
         () -> {
-          m_motor.set(0.);
+          m_motor.set(0.2);
         });
   }
 
