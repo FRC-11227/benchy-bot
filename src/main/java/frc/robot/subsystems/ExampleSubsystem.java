@@ -4,10 +4,15 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
+
+  final TalonFX m_motor = new TalonFX(1);
+  
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {}
 
@@ -21,6 +26,7 @@ public class ExampleSubsystem extends SubsystemBase {
     // Subsystem::RunOnce implicitly requires `this` subsystem.
     return runOnce(
         () -> {
+          m_motor.set(0.2);
           /* one-time action goes here */
         });
   }
