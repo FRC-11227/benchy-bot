@@ -3,12 +3,14 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
+import com.ctre.phoenix6.hardware.TalonFX;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
+  final TalonFX m_motor = new TalonFX(1);
   public ExampleSubsystem() {}
 
   /**
@@ -22,7 +24,22 @@ public class ExampleSubsystem extends SubsystemBase {
     return runOnce(
         () -> {
           /* one-time action goes here */
+          m_motor.set(0.2);
         });
+  }
+  public Command speed() {
+    return runOnce(
+        () -> {
+          /* one-time action goes here */
+          m_motor.set(-0.4);
+        });
+  }
+  public Command stopSpinning() {
+    return runOnce(
+      () -> {
+        m_motor.stopMotor();
+      });
+    
   }
 
   /**
